@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class MybatisPlusDemoApplication {
 
     public static void main(String[] args) {
-        System.out.println(Long.MAX_VALUE);
         SpringApplication.run(MybatisPlusDemoApplication.class, args);
     }
 

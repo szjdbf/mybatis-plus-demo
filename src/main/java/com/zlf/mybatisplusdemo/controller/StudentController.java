@@ -1,7 +1,7 @@
 package com.zlf.mybatisplusdemo.controller;
 
+import com.zlf.mybatisplusdemo.StudentService;
 import com.zlf.mybatisplusdemo.domain.Student;
-import com.zlf.mybatisplusdemo.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +14,16 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    private StudentMapper studentMapper;
+    private StudentService studentService;
 
-    @GetMapping("/findAll")
-    public List<Student> findAll() {
-        return studentMapper.selectList(null);
+    @GetMapping("/findList")
+    public List<Student> findList(int pageNum, int pageSize) {
+        return studentService.findList(pageNum, pageSize);
     }
 
     @GetMapping("/detail")
-    public Student detail(Long id) {
-        return studentMapper.selectById(id);
+    public Student detail(long id) {
+        return studentService.detail(id);
     }
 
 }
