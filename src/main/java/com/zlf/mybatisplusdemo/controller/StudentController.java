@@ -3,9 +3,7 @@ package com.zlf.mybatisplusdemo.controller;
 import com.zlf.mybatisplusdemo.StudentService;
 import com.zlf.mybatisplusdemo.domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,11 @@ public class StudentController {
     @GetMapping("/detail")
     public Student detail(long id) {
         return studentService.detail(id);
+    }
+
+    @PostMapping("/add")
+    public void add(@RequestBody Student student) {
+        studentService.add(student);
     }
 
 }

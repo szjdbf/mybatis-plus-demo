@@ -23,4 +23,8 @@ public class StudentService {
         return studentMapper.selectById(id);
     }
 
+    public void add(Student student) {
+        studentMapper.insert(student);
+    }
+
 }
